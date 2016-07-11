@@ -20,10 +20,10 @@ module.exports = (grunt) ->
     engine.registerFilters options.filters if options.filters
 
     @files.forEach (fp) ->
-      srcFiles = fp.src
+      srcFiles = fp.src[0]
       content = grunt.file.read(srcFiles)
       ext = path.extname(srcFiles)
-      dir = path.dirname(fp.src)
+      dir = path.dirname(srcFiles)
 
       parsePromise = engine.extParse content, (subFilepath, cb) ->
         includes = options.includes
