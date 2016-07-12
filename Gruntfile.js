@@ -61,7 +61,8 @@ module.exports = function(grunt) {
   
   grunt.registerTask('compile', ['clean', 'coffee']);
   // grunt.hideTask('compile');
-  
-  grunt.registerTask('test', ['compile', 'lint', 'run_grunt:liquid', 'nodeunit']);
+
+
+  grunt.registerTask('test', ['compile' , 'lint' , 'run_grunt:liquid' , 'nodeunit']);
   grunt.registerTask('default', ['test']);
 };
